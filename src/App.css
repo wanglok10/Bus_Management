@@ -26,12 +26,14 @@ li{
 }
 
 .section{
-  padding: 4rem 0 2rem;
+  background-origin: padding-box; 
+  text-align: center;
 }
 
 .container{
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  background-color:var(--PrimaryColor) ;
 }
 
 .icon{
@@ -42,6 +44,7 @@ li{
 .flex{
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .btn{
@@ -67,10 +70,16 @@ img, video{
 }
 
 input{
-  font-size: 100%;
-  font-weight: 500;
+  width: 300;
+  height: 300;
 }
 
 body{
   background:var(--bodyColor);
+
+}
+
+form{
+  width: 300;
+  height: 300;
 }
