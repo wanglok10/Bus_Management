@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
-  padding: 0;
-  margin: 0;
+  padding: auto;
+  margin: auto;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -20,6 +20,7 @@
 }
 a{
   text-decoration: none;
+  
 }
 li{
   list-style: none;
@@ -31,8 +32,11 @@ li{
 }
 
 .container{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  
+  margin-top: auto   ;
+  margin-bottom: auto;
+  margin-left: 0%;
+  margin-right: 0%; 
   background-color:var(--PrimaryColor) ;
 }
 
@@ -76,10 +80,12 @@ input{
 
 body{
   background:var(--bodyColor);
+  
 
 }
 
 form{
-  width: 300;
-  height: 300;
+  width: 500px;
+  height: 300px;
+  margin: auto;
 }
