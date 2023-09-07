@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import LoginLayout from './Login/login';
 import SearchLayout from './Search/Search';
 import FeedbackLayout from './Feedback/Feedback';
+import CSCS from './CSCS.js';
 
 export default function Layout() {
   return (
@@ -14,15 +15,16 @@ export default function Layout() {
           <NavbarHeader />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/search" element={<SearchLayout />}/>
-            <Route path="/feedback" element={<FeedbackLayout />}/>
-            <Route path="/login" element={<LoginLayout />}/>
-            </Routes>
+            <Route path="/search" element={<SearchLayout />} />
+            <Route path="/feedback" element={<FeedbackLayout />} />
+            <Route path="/login" element={<LoginLayout />} />
+            <Route path="/api/cscs" element={<CSCS />} />
+          </Routes>
         </div>
       </Router>
-       
+
     </div>
-    
-    
+
+
   );
 }

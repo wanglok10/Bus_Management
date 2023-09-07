@@ -7,10 +7,10 @@ import Layout from './Compoments/Layout';
 
 
 
-const App = ()=> {
+const App = () => {
   return (
     <>
- <Layout/>  
+      <Layout />
     </>
   )
 }
