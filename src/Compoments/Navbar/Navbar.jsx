@@ -15,21 +15,18 @@ export default function NavbarHeader() {
       <Button className='btn'><Link to={"/"} >BUS2L</Link></Button>
       </Navbar.Brand>
 
-      <Button className='btn'>
-        <Link to ={"/buses"}>Buses </Link>
-      </Button>;
-
+  
       <Button className='btn'>
         <Link to ={"/search"}>Search </Link>
-      </Button>;
+      </Button>
 
       <Button className='btn'>
         <Link to ={"/feedback"}>FeedBack </Link>
-      </Button>;
+      </Button>
 
       <Button className='btn'>
         <Link to ={"/login"}>Login </Link>
-      </Button>;
+      </Button>
       
     </Container>
   </Navbar>

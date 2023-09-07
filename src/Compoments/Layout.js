@@ -5,7 +5,7 @@ import Home from './Home/Home';
 import LoginLayout from './Login/login';
 import SearchLayout from './Search/Search';
 import FeedbackLayout from './Feedback/Feedback';
-import BusesLayout from './Buses/Buses';
+
 export default function Layout() {
   return (
     <div>
@@ -16,12 +16,13 @@ export default function Layout() {
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<SearchLayout />}/>
             <Route path="/feedback" element={<FeedbackLayout />}/>
-            <Route path="/buses" element={<BusesLayout />}/>
             <Route path="/login" element={<LoginLayout />}/>
             </Routes>
         </div>
       </Router>
        
     </div>
+    
+    
   );
 }
