@@ -1,39 +1,60 @@
 import React from "react";
-import { MDBInput, MDBCheckbox, MDBBtn } from "mdb-react-ui-kit";
-import { toast,ToastContainer } from "react-toastify";
+import { Button } from 'react-bootstrap';
+import { useContext, useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import apis, { authAPI, endpoints } from '../configs/Api';
+import { MyUserContext } from '../Layout';
+import { Navigate } from 'react-router-dom';
+import cookie from "react-cookies";
 import 'react-toastify/dist/ReactToastify.css'
 
-export default function LoginLayout() {
-  var isLogin = false;
-  const loginSubmit = ()=>{
-    isLogin ? toast.success("dang nhap thanh cong") : toast.warning("dang nhap ko thanh cong");
+const Login = () => {
+  const [username, setUsername] = useState()
+  const [password, setPassword] = useState()
+  const [currentUser, state] = useContext(MyUserContext)
+  const login = (evt) => {
+    evt.preventDefault()
+    const process = async () => {
+      try {
+        let res = await apis.post(endpoints['login'], {
+          "username": username,
+          "password": password
+        })
+        cookie.save('token', res.data)
+        let { data } = await authAPI().get(endpoints['current-user'])
+        cookie.save('user', data)
+        state({
+          'Type': 'login',
+          'payload': data
+        })
 
+      } catch (ex) {
+        console.log(ex)
+      }
+    }
+
+    process()
   }
-  return (
-    <div>
-      <form>
-        <MDBInput className="mb-4" id="name" label="Tên đăng nhập" />
-        <MDBInput
-          className="mb-4"
-          type="password"
-          id="form5Example2"
-          label="Mật khẩu"
-        />
-        <MDBBtn type="submit" onClick={loginSubmit}>Đăng nhập</MDBBtn>
-      </form>
 
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-    </div>
-  );
+  if (currentUser !== null)
+    return (<Navigate to="/" />)
+
+  return (
+    <>
+      <h1 className="text-center text-success">Đăng Nhập người dùng</h1>
+      <Form className="content" onSubmit={login}>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>Tên Đăng Nhập</Form.Label>
+          <Form.Control type="text" placeholder="Tên Đăng Nhập" onChange={e => setUsername(e.target.value)} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>Mật Khẩu</Form.Label>
+          <Form.Control type="password" placeholder="Mật Khẩu" onChange={e => setPassword(e.target.value)} />
+        </Form.Group>
+        <Button type='submit' variant="primary">Đăng Nhập</Button>{' '}
+      </Form>
+    </>
+  )
 }
+
+export default Login 
