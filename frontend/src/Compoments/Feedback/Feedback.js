@@ -9,17 +9,17 @@ function FeedbackLayout() {
     toast.success("da gui thanh cong")
   }
   return (
-    <div>
+    <div className="feedback">
     <form>
-      <><label htmlFor="exampleFormControlTextarea1">Username</label>
+      <><label htmlFor="exampleFormControlTextarea1">Tên của bạn</label>
         <MDBInput /><div className="form-group">
-          <label htmlFor="exampleFormControlTextarea1">Feedback</label>
+          <label htmlFor="exampleFormControlTextarea1">Phản hồi</label>
           <textarea
             className="form-control"
             id="exampleFormControlTextarea1"
             rows="5" />
         </div></>
-        <Button variant="contained" type="submit" onClick={FeedbackSubmit} className="btn">Send</Button>
+        <Button variant="contained" type="submit" onClick={FeedbackSubmit} className="btn">Gửi</Button>
     </form>
     <ToastContainer
         position="top-center"

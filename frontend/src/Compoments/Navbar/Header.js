@@ -41,14 +41,15 @@ const Header = () => {
           </Button>
         </div>
         <Navbar.Collapse className="justify-content-end">
+        <Link to="/signup" className="btn btn-danger mx-2">
+                Đăng Ký
+        </Link>
+        <Link to="/login/" className="btn btn-success">
+                Đăng Nhập
+        </Link>
           {user === null || user === undefined ? (
             <>
-              <Link to="/register" className="btn btn-danger mx-2">
-                Đăng Ký
-              </Link>
-              <Link to="/login/" className="btn btn-success">
-                Đăng Nhập
-              </Link>
+              
             </>
           ) : (
             <>

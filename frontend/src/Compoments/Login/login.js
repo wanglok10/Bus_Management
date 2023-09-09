@@ -40,20 +40,20 @@ const Login = () => {
     return (<Navigate to="/" />)
 
   return (
-    <>
+    <div className="login ">
       <h1 className="text-center text-success">Đăng Nhập người dùng</h1>
       <Form className="content" onSubmit={login}>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Group className='login1' style={{borderRadius: '25px'}} controlId="exampleForm.ControlInput1">
           <Form.Label>Tên Đăng Nhập</Form.Label>
-          <Form.Control type="text" placeholder="Tên Đăng Nhập" onChange={e => setUsername(e.target.value)} />
+          <Form.Control className="formlogin" type="text" placeholder="Tên Đăng Nhập" onChange={e => setUsername(e.target.value)} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Group className='login1' style={{borderRadius: '25px'}} controlId="exampleForm.ControlInput1">
           <Form.Label>Mật Khẩu</Form.Label>
-          <Form.Control type="password" placeholder="Mật Khẩu" onChange={e => setPassword(e.target.value)} />
+          <Form.Control className="formlogin" type="password" placeholder="Mật Khẩu" onChange={e => setPassword(e.target.value)} />
         </Form.Group>
         <Button type='submit' variant="primary">Đăng Nhập</Button>{' '}
       </Form>
-    </>
+    </div>
   )
 }
 

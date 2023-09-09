@@ -9,6 +9,7 @@ import FeedbackLayout from './Feedback/Feedback';
 import MyUserReduce from './reducers/MyUserReduce';
 import cookie from "react-cookies";
 import CSCS from './CSCS';
+import SignUp from './SignUp/signup';
 import { createContext, useReducer } from 'react';
 
 export const MyUserContext = createContext();
@@ -21,7 +22,7 @@ export default function Layout() {
     <div>
       <MyUserContext.Provider value={[user, state]}>
         <Router>
-          <div className="h-screen w-full">
+          <div className="h-full w-full">
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -30,6 +31,7 @@ export default function Layout() {
               <Route path="/login/" element={<Login />} />
               {/* <Route path="/login/customer" element={<LoginCus />} /> */}
               <Route path="/admin/cscs" element={<CSCS />} />
+              <Route path="/signup/" element={<SignUp />} />
             </Routes>
           </div>
         </Router>
